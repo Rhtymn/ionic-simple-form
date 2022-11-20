@@ -4,6 +4,7 @@ import { useHistory } from 'react-router';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const date = new Date();
   const popover = useRef<HTMLIonPopoverElement>(null);
   const [isOpenPopover, setIsOpenPopover] = useState(false);
   const [username, setUsername] = useState('');
@@ -113,7 +114,9 @@ const Home: React.FC = () => {
           </div>
 
           <IonPopover ref={popover} isOpen={isOpenPopover} onDidDismiss={() => setIsOpenPopover(false)}>
-            <IonDatetime onIonChange={datePickerChangeHandler} presentation='date'></IonDatetime>
+            <IonDatetime onIonChange={datePickerChangeHandler} 
+              presentation='date' max={new Date().toISOString()} >
+              </IonDatetime>
           </IonPopover>
 
           <IonButton onClick={sendFormHandler} className="btn-send">Send</IonButton>
