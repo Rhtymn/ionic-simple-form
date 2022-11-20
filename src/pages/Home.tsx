@@ -46,21 +46,21 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent color="dark" className="ion-padding">
-          <div className='input-group'>
+          <div className='group'>
             <IonItem color='dark'>
               <IonLabel position='floating'>Username</IonLabel>
               <IonInput value={username} onIonChange={usernameChangeHandler} type='text' placeholder='Enter Username'/>
             </IonItem>
           </div>
 
-          <div className='input-group'>
+          <div className='group'>
             <IonItem color='dark'>
               <IonLabel position='floating'>Email</IonLabel>
               <IonInput value={email} onIonChange={emailChangeHandler} type='email' placeholder='Enter Email'/>
             </IonItem>
           </div>
 
-          <div className='input-group'>
+          <div className='group'>
             <IonItem color='dark'>
               <IonLabel slot='start'>Birthdate</IonLabel>
               <IonInput slot='end' onClick={openDatePicker} value={birthdate}></IonInput>

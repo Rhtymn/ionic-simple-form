@@ -1,5 +1,6 @@
 import { IonButton ,IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonText, IonIcon } from "@ionic/react";
 import React from "react";
+import "../Home.css"
 import { useLocation } from "react-router";
 import {Link} from 'react-router-dom'
 
@@ -30,18 +31,24 @@ const Info: React.FC = () => {
             </IonToolbar>
       </IonHeader>
       <IonContent color="dark" className="ion-padding">
-            <IonItem color="dark">
-                <IonLabel>Username : </IonLabel>
-                <IonText>{usernameData}</IonText>
-            </IonItem>
-            <IonItem color="dark">
-                <IonLabel>Email : </IonLabel>
-                <IonText>{emailData}</IonText>
-            </IonItem>
-            <IonItem color="dark">
-                <IonLabel>Birthdate : </IonLabel>
-                <IonText>{birthdateData == 'dd/mm/yyyy' ? '-' : birthdateData}</IonText>
-            </IonItem>
+            <div className='group'>
+                <IonItem color="dark">
+                    <IonLabel>Username : </IonLabel>
+                    <IonText>{usernameData}</IonText>
+                </IonItem>
+            </div>
+            <div className='group'>
+                <IonItem color="dark">
+                    <IonLabel>Email : </IonLabel>
+                    <IonText>{emailData}</IonText>
+                </IonItem>
+            </div>
+            <div className='group'>
+                <IonItem color="dark">
+                    <IonLabel>Birthdate : </IonLabel>
+                    <IonText>{birthdateData == 'dd/mm/yyyy' ? '-' : birthdateData}</IonText>
+                </IonItem>
+            </div>
             <Link to={{pathname: "/home"}} ><IonButton className="btn-send">Back</IonButton></Link>
       </IonContent>
     </IonPage>
