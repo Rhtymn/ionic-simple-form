@@ -4,7 +4,6 @@ import { useHistory } from 'react-router';
 import './Home.css';
 
 const Home: React.FC = () => {
-  const date = new Date();
   const popover = useRef<HTMLIonPopoverElement>(null);
   const [isOpenPopover, setIsOpenPopover] = useState(false);
   const [username, setUsername] = useState('');
