@@ -31,16 +31,16 @@ const Info: React.FC = () => {
       </IonHeader>
       <IonContent color="dark" className="ion-padding">
             <IonItem color="dark">
-                <IonLabel slot="start" position="fixed">Username : </IonLabel>
-                <IonText slot="end">{usernameData}</IonText>
+                <IonLabel>Username : </IonLabel>
+                <IonText>{usernameData}</IonText>
             </IonItem>
             <IonItem color="dark">
-                <IonLabel slot="start" position="fixed">Email : </IonLabel>
-                <IonText slot="end">{emailData}</IonText>
+                <IonLabel>Email : </IonLabel>
+                <IonText>{emailData}</IonText>
             </IonItem>
             <IonItem color="dark">
-                <IonLabel slot="start" position="fixed">Birthdate : </IonLabel>
-                <IonText slot="end">{birthdateData == 'dd/mm/yyyy' ? '-' : birthdateData}</IonText>
+                <IonLabel>Birthdate : </IonLabel>
+                <IonText>{birthdateData == 'dd/mm/yyyy' ? '-' : birthdateData}</IonText>
             </IonItem>
             <Link to={{pathname: "/home"}} ><IonButton className="btn-send">Back</IonButton></Link>
       </IonContent>
