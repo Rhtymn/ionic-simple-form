@@ -1,0 +1,15 @@
+.input-group {
+    margin-bottom: 10px;
+}
+
+.btn-send {
+    margin-top: 20px;
+}
+
+.btn-pickdate {
+    background-color: #428cff;
+    color: black;
+    padding: 8px 5px;
+    border-radius: 3px;
+    color: white;
+}
