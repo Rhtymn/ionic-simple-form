@@ -1,5 +1,5 @@
 import { IonNote, IonButton, IonContent, IonDatetime, IonHeader, IonInput, IonItem, IonLabel, IonPage, IonPopover, IonTitle, IonToolbar } from '@ionic/react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router';
 import './Home.css';
 
@@ -40,24 +40,36 @@ const Home: React.FC = () => {
     setIsOpenPopover(false);
   }
 
+  const resetValidationState = () => {
+    setIsValidEmail(true);
+    setIsValidUsername(true);
+    setIsChoosedBirthdate(true);
+  }
+
+  const resetInputState = () => {
+      setUsername('');
+      setEmail('');
+      setBirthdate('dd/mm/yyyy');
+  }
+
   const sendFormHandler = () => {
+    // Reset validation state
+    resetValidationState();
     let isValid = true;
 
-    // Validation
+    // Username Validation
     if (username.trim().length == 0) {
       isValid = false;
       setIsValidUsername(false);
-    } else {
-      setIsValidUsername(true);
-    }
+    } 
 
+    // Birthdate Validation
     if (birthdate == 'dd/mm/yyyy'){
       isValid = false;
       setIsChoosedBirthdate(false);
-    } else {
-      setIsValidUsername(true);
-    }
+    } 
 
+    // Email Validation
     if (email.trim().length == 0) {
       isValid = false;
       setIsValidEmail(false);
@@ -66,17 +78,14 @@ const Home: React.FC = () => {
       isValid = false;
       setIsValidEmail(false);
       setEmailErrorMessage('Invalid email');
-    } else {
-      setIsValidUsername(true);
-      setEmailErrorMessage('');
-    }
+    } 
 
     if (isValid) {
+      // Navigate to Info Pages
       history.push({pathname:'/info', state:{username, email, birthdate}});
-      setUsername('');
-      setEmail('');
-      setBirthdate('dd/mm/yyyy');
-      setIsChoosedBirthdate(true);
+
+      // Reset input state
+      resetInputState();
     }
   }
 
