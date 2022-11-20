@@ -1,4 +1,4 @@
-import { IonButton ,IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonText, IonIcon } from "@ionic/react";
+import { IonButton ,IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonText, IonNote } from "@ionic/react";
 import React from "react";
 import "../Home.css"
 import { useLocation } from "react-router";
